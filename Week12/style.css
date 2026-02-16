@@ -31,6 +31,7 @@ h1{
     border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: 1rem;
+
 }
 
 form{
@@ -78,7 +79,8 @@ input#submit{
     border-bottom: 1px solid var(--border-color);
 }
 pre{
-    background-color: #d8d8d8;
+    background-color: #1c213d;
+    color: greenyellow;
     padding: 0.5rem;
     border-radius: 10px;
     font-size: 0.9rem;

@@ -8,7 +8,7 @@ const submit = document.getElementById("submit");
 const totalDisplay = document.getElementById("totalDisplay");
 const totalBreakdown = document.getElementById("totalBreakdown");
 const output = document.getElementById("output")
-let basePrice = 12;
+const basePrice = 12;
 let shippingCost = 0;
 let totalCost = basePrice + shippingCost;
 
@@ -76,24 +76,35 @@ form.addEventListener("change",()=>{
 
 submit.addEventListener("click",(e)=>{
     e.preventDefault()
+    const fd = new FormData(form);
+    const formData = Object.fromEntries(fd.entries());
+    const out = {
+        ...formData,
+        basePrice,
+        shippingCost,
+        totalCost,
+        createdAt : new Date().toISOString()
+    }
+    createSummary(out)
    if(form.checkValidity()){
-    order.name = fullName.value;
-    order.email = email.value;
-    order.delivery_method = deliveryMethod.value;
-    order.zone = zone.value;
-    order.notes = notes.value;
-    order.base_price = basePrice;
-    order.shipping_cost = shippingCost;
-    order.total_cost = order.base_price + order.shipping_cost;
-    createSummary(order);
+    
+    // order.name = fullName.value;
+    // order.email = email.value;
+    // order.delivery_method = deliveryMethod.value;
+    // order.zone = zone.value;
+    // order.notes = notes.value;
+    // order.base_price = basePrice;
+    // order.shipping_cost = shippingCost;
+    // order.total_cost = order.base_price + order.shipping_cost;
+    // createSummary(order);
     }else{
         form.reportValidity();
    }
     
     
 
-    
-    console.log(order);
+    console.log(out);
+    // console.log(order);
     
 
 })
