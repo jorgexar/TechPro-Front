@@ -1,3 +1,6 @@
+:root{
+    --border-color: #969696;
+}
 * {
     box-sizing: border-box;
     font-family: Segoe UI, Roboto, sans-serif;
@@ -25,10 +28,11 @@ h1{
   }
 }
 .card{
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: 1rem;
 }
+
 form{
     display: flex;
     flex-wrap: wrap;
@@ -46,8 +50,12 @@ input,select,textarea{
     padding: 0.5rem;
     outline: none;
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
+    font-size: 1.2rem;
+}
+input:hover{
+    cursor: pointer;
 }
 .formWrap div:last-of-type{
     min-width: 100%;
@@ -66,8 +74,12 @@ input#submit{
     margin-left: 0.2rem;
     margin-top: 10px;
 }
+.summaryWrap .top{
+    border-bottom: 1px solid var(--border-color);
+}
 pre{
     background-color: #d8d8d8;
     padding: 0.5rem;
     border-radius: 10px;
+    font-size: 0.9rem;
 }
