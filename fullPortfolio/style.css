@@ -864,4 +864,77 @@ img {
   .contact-form-wrapper {
     padding: 1.5rem;
   }
+} 
+
+
+/* GEMINI CSS example */
+
+/* Popup Overlay Styling */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.popup.active {
+  display: flex;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.popup-content {
+  background: var(--gradient-card);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: var(--glow-primary);
+}
+
+.popup-content h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.popup-data {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.popup-data p {
+  margin-bottom: 0.5rem;
+  color: var(--muted-foreground);
+}
+
+.popup-data strong {
+  color: var(--primary);
+}
+
+/* Close button inside popup */
+.close-popup {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--muted-foreground);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.close-popup:hover {
+  color: var(--primary);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
