@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week12 Checkout Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Exercise 1 -- Checkout + Live Pricing</h1>
+        <div class="checkout">
+            <div class="formWrap card">
+                <form action="" id="myForm">
+                    <div>
+                    <label for="name">Full name</label>
+                    <input type="text" name="name" id="name" placeholder="ex. John doe"  required>
+                    </div>
+                    <div>
+
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" minlength="6" placeholder="ex. john@doe.com" required>
+                    </div>
+                    <div>
+
+                        <label for="deliveryMethod">Delivery</label>
+                        <select name="deliveryMethod" id="deliveryMethod" required>
+                            <option value="" selected disabled>Choose...</option>
+                            <option value="pickup">Pickup</option>
+                            <option value="courier">Courier</option>
+                        </select>
+                    </div>
+                    <div>
+
+                        <label for="zone">Zone</label>
+                        <select name="zone" id="zone" disabled>
+                            <option value="" selected disabled>Choose...</option>
+                            <option value="zone_a">Zone A - €2.50</option>
+                            <option value="zone_b">Zone B - €4.00</option>
+                            <option value="zone_c">Zone C - €6.50</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="notes">Notes(optional)</label>
+                        
+                        <input type="text" maxlength="50" name="notes" id="notes" placeholder="ex. Doorbell broken"></textarea>
+                    </div>
+                    <input type="submit" value="Place order" id="submit">
+                </form>
+
+            </div>
+            <div class="summaryWrap card">
+                <div class="top">
+                <h3 class="total" id="totalDisplay">Total:</h3>
+                <p id="totalBreakdown"></p>
+                </div>
+                <div class="bottom">
+                    <h3>Submit output</h3>
+                    <pre id="output">
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>

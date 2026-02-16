@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    font-family: Segoe UI, Roboto, sans-serif;
+}
+
+body {
+    background: #f3f4f6;
+    margin: 0;
+    padding: 40px 20px;
+    color: #111827;
+    display: grid;
+    place-items: center;
+}
+h1{
+    text-align: center;
+}
+.checkout{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+}
+@media only screen and (max-width: 800px) {
+  .checkout {
+    grid-template-columns: 1fr;
+  }
+}
+.card{
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 1rem;
+}
+form{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.formWrap div{
+    display: flex;
+    flex-basis: 50%;
+    padding: 0.2rem;
+    flex-direction: column;
+    flex-grow: 1;
+}
+input,select,textarea{
+    padding: 0.5rem;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.formWrap div:last-of-type{
+    min-width: 100%;
+}
+form *:focus{
+    border-color: rgb(43, 248, 187);
+}
+
+form *:disabled {
+  opacity: 0.5;
+}
+
+input#submit{
+    background-color: black;
+    color: white;
+    margin-left: 0.2rem;
+    margin-top: 10px;
+}
+pre{
+    background-color: #d8d8d8;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
