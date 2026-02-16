@@ -1,6 +1,71 @@
 const contactForm = document.getElementById('contactForm');
 const popup = document.getElementById('popup');
+const projectData = [
+  {
+    title: "E-Commerce Platform",
+    description: "A modern e-commerce solution with seamless checkout experience and inventory management.",
+    tags: ["React", "Node.js", "Stripe"],
+    link: "#",
+    imageText: "Project 1"
+  },
+  {
+    title: "SaaS Dashboard",
+    description: "Analytics dashboard with real-time data visualization and customizable widgets.",
+    tags: ["TypeScript", "D3.js", "PostgreSQL"],
+    link: "#",
+    imageText: "Project 2"
+  },
+  {
+    title: "Mobile Banking App",
+    description: "Secure and intuitive mobile banking experience with biometric authentication.",
+    tags: ["React Native", "Firebase", "Plaid"],
+    link: "#",
+    imageText: "Project 3"
+  }
+];
 
+const renderProjects = () => {
+  const projectsGrid = document.querySelector('.projects-grid');
+  
+  // Clear existing static content
+  projectsGrid.innerHTML = '';
+
+  // Map through data and create HTML strings
+  projectData.forEach(project => {
+    // Generate tags HTML
+    const tagsHTML = project.tags
+      .map(tag => `<span class="tag">${tag}</span>`)
+      .join('');
+
+    // Create the article element
+    const projectCard = `
+      <article class="project-card">
+        <div class="project-image">
+          <div class="image-placeholder dark">${project.imageText}</div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">${project.title}</h3>
+          <p class="project-description">${project.description}</p>
+          <div class="project-tags">
+            ${tagsHTML}
+          </div>
+          <a href="${project.link}" class="project-link">
+            View Project
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 7h10v10"/><path d="M7 17 17 7"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+    `;
+
+    // Append to grid
+    projectsGrid.innerHTML += projectCard;
+  });
+};
+
+// Initialize the render
+document.addEventListener('DOMContentLoaded', renderProjects);
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
