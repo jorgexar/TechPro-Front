@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multi-Step Form Practice</title>
+    <style>
+        /* Reset + base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 16px;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Form container */
+#multiStepForm {
+    width: 100%;
+    max-width: 480px;
+    background: #ffffff;
+    padding: 28px 32px 32px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Each step */
+.form-group {
+    display: none;
+    animation: fadeIn 0.25s ease;
+}
+
+/* Headings */
+.form-group h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    background: #f9fafb;
+}
+
+input:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+/* Buttons container */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+/* Primary (Next / Submit) */
+button.next,
+button[type="submit"] {
+    background: #6366f1;
+    color: white;
+}
+
+button.next:hover,
+button[type="submit"]:hover {
+    background: #4f46e5;
+    transform: translateY(-1px);
+}
+
+/* Secondary (Back) */
+button.back {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+button.back:hover {
+    background: #d1d5db;
+}
+
+/* Subtle entrance animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <h1>Multi-Step Form Practice</h1>
+
+    <form id="multiStepForm">
+
+        <div class="form-group" id="step-1">
+            <h2>Step 1: Personal Info</h2>
+            <label for="firstName">First Name:</label><br>
+            <input type="text" id="firstName" minlength="3" name="firstName" required><br><br>
+
+            <label for="lastName">Last Name:</label><br>
+            <input type="text" id="lastName" minlength="3" name="lastName" required>
+            <div class="buttonsWrap">
+                <button onclick="validateAndShowNextGroup()"  class="next">Next</button>
+            </div>
+        </div>
+
+        <div class="form-group" id="step-2">
+            <h2>Step 2: Contact Info</h2>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone:</label><br>
+            <input type="tel" minlength="10" id="phone" name="phone" required>
+            <div class="buttonsWrap">
+                <button onclick="goBack()" class="back">Back</button>
+                <button onclick="validateAndShowNextGroup()"  class="next" >Next</button>
+            </div>
+        </div>
+
+        <div class="form-group" id="step-3">
+            <h2>Step 3: Account Details</h2>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required>
+            <div class="buttonsWrap">
+                <button onclick="goBack()" class="back">Back</button>
+                <button onclick="validateAndShowNextGroup()"  class="next" >Next</button>
+            </div>
+        </div>
+
+        <div class="form-group" id="step-4">
+            <h2>Step 4: Confirmation</h2>
+            <p>Review your information and submit.</p>
+            <button onclick="goBack()" class="back">Back</button>
+            <button type="submit"  class="next">Submit</button>
+        </div>
+
+    </form>
+
+</body>
+<script src="form-groups.js"></script>
+</html>
