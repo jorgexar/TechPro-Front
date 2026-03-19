@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolaction Nation</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        
+    </style>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <p id="error"></p>
+    <div id="results">
+        <div class="info">
+            <div class="card">
+                <h3>Latitude :</h3>
+                <p id="lat">0</p>
+            </div>
+            <div class="card">
+                <h3>Longitude:</h3>
+                <p id="long">0</p>
+            </div>
+            <div class="card">
+                <h3>Accuracy :</h3>
+                <p id="acc">0</p>
+            </div>
+            <div class="redirect"><p id="gMaps"></p></div>
+            
+            
+            
+        </div>
+        <div id="map">
+            <p class="mapInfo" id="mapInfo">No Location Requested</p>
+        </div>
+        
+    </div>
+    <div class="controls">
+
+        <button id="location-btn">Get My Location</button>
+    </div>
+</body>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</html>

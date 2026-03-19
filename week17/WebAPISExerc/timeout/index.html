@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+    <style>
+        label{
+            font-size: 2rem;
+        }
+        input{
+            font-size: 2rem;
+            margin-bottom: 10px;
+            background-color: black;
+            color: rgb(43, 255, 0);
+        }
+        .results{
+            padding: 1rem;
+            background-color: black;
+            color: rgb(43, 255, 0);
+            font-size: 2rem;
+            min-height: 2rem;
+        }
+        .stats{
+            padding: 1rem;
+            min-height: 1rem;
+            background-color: brown;
+            color: orange;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <label for="search">Search</label>
+    <input type="text" id="search" placeholder="Search...">
+    <div id="results" class="results"></div>
+    <div id="stats" class="stats"></div>
+</body>
+<script type="module" src="time.js"></script>
+</html>
