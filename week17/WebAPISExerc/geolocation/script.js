@@ -51,7 +51,7 @@ function success(position) {
 
 function error() {
     errorEl.innerHTML = "Sorry, no position available.";
-    btn.textContent = "Get My Location";
+    btn.textContent = "Try again";
     btn.disabled = false;
 }
 btn.addEventListener('click', () => {
